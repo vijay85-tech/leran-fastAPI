@@ -29,3 +29,8 @@ def filter_data(min_age: int = None, max_age: int = None):
     if min_age is None or max_age is None:
         return {"message": "No age filters provided."}
     return {"min_age": min_age, "max_age": max_age, "message": "Filtering data based on age."}
+
+#post-form data
+@app.post("/create")
+def create_user(name:str, age:int, address:str = None):
+    return {"name": name, "age": age, "address": address, "message": "User created successfully."}
